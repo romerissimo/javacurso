@@ -2,8 +2,8 @@ public class Promedio{
   public static void main(String args[]){
 
    int matematicas = 5;
-   int biologia = 8;
-   int quimica = 7;
+   int biologia = 5;
+   int quimica = 5;
    int promedio = 0;
 
    promedio = (matematicas + biologia + quimica) / 3;
