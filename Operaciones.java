@@ -6,6 +6,9 @@ public class Operaciones{
    int resultado  = 0;
 
    resultado = numero_uno + numero_dos / 2;
-   System.out.println("El resultado es: " + resultado);
+   System.out.println("El resultado incorrecto es: " + resultado);
+
+   resultado = (numero_uno + numero_dos) / 2;
+   System.out.println("El resultado correcto es: " + resultado);
   }
 }
