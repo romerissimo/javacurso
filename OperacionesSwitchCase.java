@@ -13,8 +13,8 @@ public static void main(String args[]){
   System.out.println("");
   System.out.println("       1: suma | 2: multiplicacion | 3: division       ");
   System.out.println("");
-  
-  System.out.println("Ingrese el parametro: ");
+
+  System.out.println("Ingrese el numero de operacion: ");
   parametro = entrada.nextInt();
   System.out.println("");
 
