@@ -29,6 +29,8 @@ public static void main(String args[]){
     case 3: resultado = num_uno / num_dos;
             System.out.println("El resultado de la division es: " + resultado);
             break;
+    default: System.out.println("La opcion no existe");
+            break;
     }
  }
 }
