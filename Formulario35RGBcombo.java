@@ -68,11 +68,12 @@ public void actionPerformed(ActionEvent e){
 
     Color color1 = new Color(rojo,verde,azul); /* Objeto Color que viene con java.awt.* */
     boton1.setBackground(color1);
+    boton1.setOpaque(true); /* Agregar esta linea de codigo para que se vea el color, sino no pasa nadas */
     }
  }
 public static void main(String args[]){
   Formulario35RGBcombo formulario1 = new Formulario35RGBcombo();
-  formulario1.setBounds(0,0,220,220);
+  formulario1.setBounds(0,0,240,220);
   formulario1.setVisible(true);
   formulario1.setResizable(false);
   formulario1.setLocationRelativeTo(null);
