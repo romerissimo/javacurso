@@ -59,7 +59,7 @@ public class Licencia extends JFrame implements ActionListener, ChangeListener{
     add(boton2);
 
 /* el logo de Coca Cola como label */
-    ImageIcon imagen = new ImageIcon("images/logo-coca.png");
+    ImageIcon imagen = new ImageIcon("images/coca-logo-trans.png");
     label2 = new JLabel(imagen);
     label2.setBounds(305,135,300,300);
     add(label2);
