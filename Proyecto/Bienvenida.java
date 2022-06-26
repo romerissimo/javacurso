@@ -7,6 +7,7 @@ public class Bienvenida extends JFrame implements ActionListener{
  private JTextField textfield1;
  private JLabel label1, label2, label3, label4;
  private JButton boton1;
+ public static String texto = ""; /* Para guardar el nombre que ingresa el usuario */
 
  public Bienvenida(){
    setLayout(null);
@@ -55,7 +56,22 @@ public class Bienvenida extends JFrame implements ActionListener{
 
    public void actionPerformed(ActionEvent e){
      if(e.getSource() == boton1){
-
+       texto = textfield1.getText().trim(); /* Colocamos el nombre ingresado en la variable texto.
+                                               El metodo "trim()" quita los espacios */
+       if(texto.equals("")){   /*el "" representa si no se ha tipeado nada */
+          JOptionPane.showMessageDialog(null, "Debes ingresar tu nombre."); /*lanza una ventanita para avisar */
+       } else{
+    /* Para llamar a la siguiente ventana Licencia, COPIAR AQUI EL CODIGO main
+       de la clase Licencia sin los parentesis ni la parte de Static args[] */
+         Licencia ventanalicencia = new Licencia();
+         ventanalicencia.setBounds(0,0,600,370);
+         ventanalicencia.setVisible(true);
+         ventanalicencia.setResizable(false);
+         ventanalicencia.setLocationRelativeTo(null);
+         this.setVisible(false);  /* "this" hace mencion de la ventana Bienvenida
+                                      (donde estamos) y "setVisible false" hace que desaparezca
+                                      dejando a "ventanalicencia" visible al final */
+       }
      }
    }
 public static void main(String args[]){
