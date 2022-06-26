@@ -7,7 +7,9 @@ public class Bienvenida extends JFrame implements ActionListener{
  private JTextField textfield1;
  private JLabel label1, label2, label3, label4;
  private JButton boton1;
- public static String texto = ""; /* Para guardar el nombre que ingresa el usuario */
+ public static String texto = ""; /* Para guardar el nombre que ingresa el usuario
+                                     Es public por que va a ser usada o llamada
+                                     por otra clase externa que es Licencia.java  */
 
  public Bienvenida(){
    setLayout(null);

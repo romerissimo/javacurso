@@ -10,6 +10,9 @@ public class Licencia extends JFrame implements ActionListener, ChangeListener{
   private JButton boton1, boton2;
   private JScrollPane scrollpane1;
   private JTextArea textarea1;
+  /* curso java 46 - Declaramos la variable String: nombre, aqui se va a alojar el contenido de la
+  variable texto que esta en la clase Bienvenida.java. Ver la linea 23 */
+  String nombre = "";
 
 /* Creamos el constructor */
   public Licencia(){
@@ -17,6 +20,11 @@ public class Licencia extends JFrame implements ActionListener, ChangeListener{
     setTitle("Licencia de uso");
     /* Imagen icono pequeño que remplaza al icono de Java */
     setIconImage(new ImageIcon(getClass().getResource("images/icon.png")).getImage());
+/* curso java 46 - A continuacion vamos a recuperar el valor de una variable que esta en
+otra clase. Se crea un objeto con la clase que queremos "visitar": Bienvenida.java*/
+    Bienvenida ventanaBienvenida = new Bienvenida();
+    nombre = ventanaBienvenida.texto;   /* asi se asigna el valor de texto de la clase
+                                        Bienvenida a la variable nombre de esta clase. */
 
     label1 = new JLabel("TÉRMINOS Y CONDICIONES");
     label1.setBounds(215,5,200,30);
@@ -41,7 +49,9 @@ public class Licencia extends JFrame implements ActionListener, ChangeListener{
     scrollpane1.setBounds(10,40,580,190); /* El textarea se acomoda a las coordenadas del scroll */
     add(scrollpane1);
 
-    check1 = new JCheckBox("Yo Acepto");
+    check1 = new JCheckBox("Yo " + nombre + " Acepto");  /* Agregamos el nombre que trajimos de la clase
+                                                         Bienvenida al lado del Checkbox. De aqui ir a Los
+                                                         eventos "Public void" linea 77 */
     check1.setBounds(10,250,300,30);
     check1.addChangeListener(this);
     add(check1);
@@ -65,15 +75,33 @@ public class Licencia extends JFrame implements ActionListener, ChangeListener{
     add(label2);
   }
 /* Programamos evento para el checkbox */
+/* curso java 46 - si esta seleccionado o no uno de los botones esta activo/inactivo */
 public void stateChanged(ChangeEvent e){
-
-
-
+  if(check1.isSelected() == true){
+     boton1.setEnabled(true);
+     boton2.setEnabled(false);
+  } else {
+     boton1.setEnabled(false);
+     boton2.setEnabled(true);
+  }
 }
 /* Programamos evento para los botones */
 public void actionPerformed(ActionEvent e){
-
-
+  if(e.getSource() == boton1){    /* salta a la ventana Principal - curso java 46*/
+     Principal ventanaPrincipal = new Principal();
+     ventanaPrincipal.setBounds(0,0,640,535);
+     ventanaPrincipal.setVisible(true);
+     ventanaPrincipal.setResizable(false);
+     ventanaPrincipal.setLocationRelativeTo(null);
+     this.setVisible(false);   /* desaparece "esta", la ventana Licencia */
+  } else if(e.getSource() == boton2){  /* vuelve la ventana Bienvenida - curso java 46 */
+     Bienvenida ventanabienvenida = new Bienvenida();
+     ventanabienvenida.setBounds(0,0,350,450);
+     ventanabienvenida.setVisible(true);
+     ventanabienvenida.setResizable(false);
+     ventanabienvenida.setLocationRelativeTo(null);
+     this.setVisible(false);   /* desaparece "esta", la ventana Licencia */
+  }
 }
 
 /* El codigo principal main */
@@ -83,6 +111,5 @@ public static void main(String args[]){
   ventanalicencia.setVisible(true);
   ventanalicencia.setResizable(false);
   ventanalicencia.setLocationRelativeTo(null);
-}
-
+ }
 }
