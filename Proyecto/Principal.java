@@ -1,6 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-imoprt java.awt.event.*;
+import java.awt.event.*;
 
 public class Principal extends JFrame implements ActionListener{
 
@@ -24,7 +24,7 @@ public class Principal extends JFrame implements ActionListener{
 /*Agregar barra de menu mb */
     mb = new JMenuBar();
     mb.setBackground(new Color(255,0,0));
-    set JMenuBar(mb)
+    setJMenuBar(mb);
 
     menuOpciones = new JMenu("Opciones"); /* Menu Opciones */
     menuOpciones.setBackground(new Color(255,0,0));
@@ -53,7 +53,7 @@ public class Principal extends JFrame implements ActionListener{
     miCalculo = new JMenuItem("Vacaciones");
     miCalculo.setFont(new Font("Andale Mono", 1, 14));
     miCalculo.setForeground(new Color(255,0,0));
-    miCalculo.add(miCalculo);
+    menuCalcular.add(miCalculo);
     miCalculo.addActionListener(this);
 
 /* Los sub-items del item menucolorFondo para cambiar color de fondo */
@@ -118,7 +118,7 @@ public class Principal extends JFrame implements ActionListener{
     labelNombre.setForeground(new Color(255,255,255));
     add(labelNombre);
 
-    txtNombreTrabajador = new JTextfield();
+    txtNombreTrabajador = new JTextField();
     txtNombreTrabajador.setBounds(25,213,150,25);
     txtNombreTrabajador.setBackground(new java.awt.Color(224,224,224));
     txtNombreTrabajador.setFont(new java.awt.Font("Andale Mono", 1, 14));
@@ -131,7 +131,7 @@ public class Principal extends JFrame implements ActionListener{
     labelAPaterno.setForeground(new Color(255,255,255));
     add(labelAPaterno);
 
-    txtAPaternoTrabajador = new JTextfield();
+    txtAPaternoTrabajador = new JTextField();
     txtAPaternoTrabajador.setBounds(25,273,150,25);
     txtAPaternoTrabajador.setBackground(new java.awt.Color(224,224,224));
     txtAPaternoTrabajador.setFont(new java.awt.Font("Andale Mono", 1, 14));
@@ -145,7 +145,7 @@ public class Principal extends JFrame implements ActionListener{
     labelAMaterno.setForeground(new Color(255,255,255));
     add(labelAMaterno);
 
-    txtAMaternoTrabajador = new JTextfield();
+    txtAMaternoTrabajador = new JTextField();
     txtAMaternoTrabajador.setBounds(25,334,150,25);
     txtAMaternoTrabajador.setBackground(new java.awt.Color(224,224,224));
     txtAMaternoTrabajador.setFont(new java.awt.Font("Andale Mono", 1, 14));
@@ -159,7 +159,7 @@ public class Principal extends JFrame implements ActionListener{
     labelDepartamento.setForeground(new Color(255,255,255));
     add(labelDepartamento);
 
-    comboDepartanmento = new JComboBox();
+    comboDepartamento = new JComboBox();
     comboDepartamento.setBounds(220,213,220,25);
     comboDepartamento.setBackground(new java.awt.Color(224,224,224));
     comboDepartamento.setFont(new java.awt.Font("Andale Mono", 1, 14));
@@ -188,17 +188,58 @@ public class Principal extends JFrame implements ActionListener{
     comboAntiguedad.addItem("7 años o más de servicio");
 
 /* Label y text area con scroll para el resultado */
-    labelResultado = nee JLabel("Resultado del cálculo");
+    labelResultado = new JLabel("Resultado del cálculo");
     labelResultado.setBounds(220,307,180,25);
     labelResultado.setFont(new Font("Andale Mono", 1, 12));
     labelResultado.setForeground(new Color(255,255,255));
     add(labelResultado);
+/* El area de texto con scroll */
+    textarea1 = new JTextArea();
+    textarea1.setEditable(false);
+    textarea1.setBackground(new Color(244,244,244));
+    textarea1.setFont(new Font("Andale Mono", 1, 11));
+    textarea1.setForeground(new Color(255,0,0));
+    textarea1.setText("\n  Aqui aparece el resultado del calculo de las vacaciones.");
+    scrollpane1 = new JScrollPane(textarea1);
+    scrollpane1.setBounds(220,333,385,90);
+    add(scrollpane1);
 
+    labelfooter = new JLabel("2022 The Coca-Cola Company | Todos los derechos reservados");
+    labelfooter.setBounds(135,445,500,30);
+    labelfooter.setFont(new java.awt.Font("Andale Mono", 1, 12));
+    labelfooter.setForeground(new java.awt.Color(255,255,255));
+    add(labelfooter);
+    }
 
+public void actionPerformed(ActionEvent e){
+   if(e.getSource() == miCalculo){
 
+   }
+   if(e.getSource() == miRojo){
 
+   }
+   if(e.getSource() == miNegro){
 
+   }
+   if(e.getSource() == miMorado){
+
+   }
+   if(e.getSource() == miNuevo){
+
+   }
+   if(e.getSource() == miSalir){
+
+   }
+   if(e.getSource() == miElCreador){
+
+   }
+}
+/* Metodo main */
+public static void main(String args[]){
+   Principal ventanaPrincipal = new Principal();
+   ventanaPrincipal.setBounds(0,0,640,535);
+   ventanaPrincipal.setVisible(true);
+   ventanaPrincipal.setResizable(false);
+   ventanaPrincipal.setLocationRelativeTo(null);
   }
-
-
 }
