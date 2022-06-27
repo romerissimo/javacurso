@@ -19,6 +19,9 @@ public class Principal extends JFrame implements ActionListener{
 /* Crear el constructor */
   public Principal(){
     setLayout(null);
+    setDefaultCloseOperation(EXIT_ON_CLOSE); /* Curso Java 48 - Para que el programa al cerrar
+                                             la ventana no se quede en daemon y devuelva el
+                                             prompt del sistema en el simbolo del sistema */
     setTitle("Pantalla principal");
     getContentPane().setBackground(new Color(255,0,0));
     setIconImage(new ImageIcon(getClass().getResource("images/icon.png")).getImage());
@@ -98,7 +101,7 @@ public class Principal extends JFrame implements ActionListener{
     menuOpciones.add(miSalir);
     miSalir.addActionListener(this);
 /* Logo de la compañ+ia */
-    ImageIcon imagen = new ImageIcon("images/logo-coca.png");
+    ImageIcon imagen = new ImageIcon("images/coca-logo-blanco.png");
     labelLogo = new JLabel(imagen);
     labelLogo.setBounds(5,5,250,100);
     add(labelLogo);

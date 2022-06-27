@@ -13,6 +13,9 @@ public class Bienvenida extends JFrame implements ActionListener{
 
  public Bienvenida(){
    setLayout(null);
+   setDefaultCloseOperation(EXIT_ON_CLOSE); /* Curso Java 48 - Para que el programa al cerrar
+                                            la ventana no se quede en daemon y devuelva el
+                                            prompt del sistema en el simbolo del sistema */
    setTitle("Bienvenido");
    getContentPane().setBackground(new Color(255,0,0));
    setIconImage(new ImageIcon(getClass().getResource("images/icon.png")).getImage());

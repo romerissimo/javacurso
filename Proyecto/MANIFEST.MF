@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Created-By: Martin Romero
+Main-class: Bienvenida
+X-COMMENT: Curso Java - dar enter despues de este comentario
