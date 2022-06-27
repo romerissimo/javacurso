@@ -17,6 +17,9 @@ public class Licencia extends JFrame implements ActionListener, ChangeListener{
 /* Creamos el constructor */
   public Licencia(){
     setLayout(null);
+    setDefaultCloseOperation(EXIT_ON_CLOSE); /* Curso Java 48 - Para que el programa al cerrar
+                                             la ventana no se quede en daemon y devuelva el
+                                             prompt del sistema en el simbolo del sistema */
     setTitle("Licencia de uso");
     /* Imagen icono pequeño que remplaza al icono de Java */
     setIconImage(new ImageIcon(getClass().getResource("images/icon.png")).getImage());
@@ -46,7 +49,7 @@ otra clase. Se crea un objeto con la clase que queremos "visitar": Bienvenida.ja
 "\n\n          PARA MAYOR INFORMACIÓN SOBRE NUESTROS PRODUCTOS O SERVICIOS, POR FAVOR VISITE" +
 "\n          http://www.youtube.com/msrservices");
     scrollpane1 = new JScrollPane(textarea1);
-    scrollpane1.setBounds(10,40,580,190); /* El textarea se acomoda a las coordenadas del scroll */
+    scrollpane1.setBounds(10,40,560,190); /* El textarea se acomoda a las coordenadas del scroll */
     add(scrollpane1);
 
     check1 = new JCheckBox("Yo " + nombre + " Acepto");  /* Agregamos el nombre que trajimos de la clase
