@@ -1,0 +1,2 @@
+Para crear el archivo .jar (empaquetado) hacer el siguiente comando:
+$ jar cvfm Sistema.jar MANIFEST.MF Bienvenida.class Licencia.class Principal.class images/coca-logo-blanco.png images/icon.png images/coca-logo-trans.png images/logo-coca.png
